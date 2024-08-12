@@ -59,73 +59,26 @@
 
 <!-- CSS for Animations and Effects -->
 <style>
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
-}
-
-@keyframes wave {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-@keyframes statsAppear {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-#typed-text {
-  display: inline-block;
-  font-size: 3em;
-  color: #ffffff;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 4px solid;
-  width: 0;
-  animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
-}
-
-.tech-icon {
-  margin: 0 15px;
-  animation: wave 3s infinite ease-in-out;
-}
-
-.social-icon {
-  margin: 0 10px;
-  animation: pulse 2s infinite ease-in-out;
-}
-
-.stats-graph {
-  margin: 0 10px;
-  animation: statsAppear 1.5s ease-out;
-}
-
-.latest-posts {
-  transition: transform 0.3s;
-}
-
-.latest-posts:hover {
-  transform: scale(1.05);
-}
+@keyframes typing { from { width: 0; } to { width: 100%; } }
+@keyframes blink { 50% { border-color: transparent; } }
+@keyframes wave { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+@keyframes statsAppear { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+#typed-text { display: inline-block; font-size: 3em; color: #ffffff; overflow: hidden; white-space: nowrap; border-right: 4px solid; width: 0; animation: typing 4s steps(40, end), blink 0.75s step-end infinite; }
+.tech-icon { margin: 0 15px; animation: wave 3s infinite ease-in-out; }
+.social-icon { margin: 0 10px; animation: pulse 2s infinite ease-in-out; }
+.stats-graph { margin: 0 10px; animation: statsAppear 1.5s ease-out; }
+.latest-posts { transition: transform 0.3s; }
+.latest-posts:hover { transform: scale(1.05); }
 </style>
 
-<!-- JavaScript for Typing Effect -->
+<div id="typed-text"></div>
+
 <script>
 document.addEventListener('DOMContentLoaded', (event) => {
   const typedText = "Hi, I'm Reyan Abid";
   let index = 0;
   const typingSpeed = 100;
-
   function typeText() {
     if (index < typedText.length) {
       document.getElementById('typed-text').textContent += typedText.charAt(index);
@@ -136,3 +89,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
   typeText();
 });
 </script>
+
